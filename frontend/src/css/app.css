@@ -1,0 +1,126 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --animate-to-bottom: topToBottom .9s ease-in-out;
+    --animate-to-right: leftToRight .9s ease-in-out;
+    --animate-to-top: bottomToTop .9s ease-in-out;
+    --animate-img: img .9s ease-in-out;
+    --font-tiktok: "TikTok Sans",
+        sans-serif;
+    /* PRIMARY */
+    --color-primary: #27374D;
+    --color-primary-light: #415A77;
+    --color-primary-dark: #1B263B;
+
+    /* ACCENT */
+    --color-accent-gold: #D4AF37;
+    --color-accent-soft-blue: #A6D0DD;
+    --color-accent-orange: #FF8E3C;
+
+    /* NEUTRAL */
+    --color-neutral-white: #FFFFFF;
+    --color-neutral-light: #F8F9FA;
+    --color-neutral-medium: #D9D9D9;
+    --color-neutral-dark: #495057;
+
+    /* STATE */
+    --color-state-success: #2ECC71;
+    --color-state-warning: #F39C12;
+    --color-state-danger: #E74C3C;
+
+}
+
+* {
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.bgcarousel {
+    background-image: url("../assets/bg-carousel.jpg")
+}
+
+.test {
+    animation: animates inherit 1s;
+}
+
+
+@layer base {
+    body {
+        @apply font-tiktok;
+    }
+=======
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@layer theme, base, mui, components, utilities;
+@import "tailwindcss";
+
+@theme {
+    --font-montserrat: "Montserrat" . sans-serif;
+    --animate-to-bottom: topToBottom 0.9s ease-in-out;
+    --animate-to-right: leftToRight 0.9s ease-in-out;
+    --animate-to-top: bottomToTop 0.9s ease-in-out;
+    --animate-img: img 0.9s ease-in-out;
+}
+
+* {
+    transition: all 0.2s ease-in-out;
+>>>>>>> 2b2e8e3 (two commit)
+}
+
+@keyframes img {
+    0% {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+
+    100% {
+        opacity: 100;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes topToBottom {
+    0% {
+        transform: translateY(-300px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes bottomToTop {
+    0% {
+        transform: translateY(300px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes leftToRight {
+    0% {
+        transform: translateX(-200px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+<<<<<<< HEAD
+}
+=======
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    scrollbar-width: none;
+}
+>>>>>>> 2b2e8e3 (two commit)

@@ -1,0 +1,147 @@
+
+@baseAPI = http://localhost:5000/
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY2NzExMTU4LCJleHAiOjE3NjczMTU5NTh9.yWd_L3Hj9RNITmhPN15Cx-Y9YbALoWvvf4g917L9L5k
+@contentType = application/json
+@adminUser = "AdminMorphy"
+@adminPass = "Admin_111"
+
+###
+
+// login as admin
+
+POST {{baseAPI}}login
+Content-Type: {{contentType}}
+
+{
+    "userOrEmail": {{adminUser}},
+    "password": {{adminPass}}
+}
+
+###
+
+// create Product
+
+POST {{baseAPI}}product/all
+Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
+
+[
+    {
+        "judul": "Sepatu 1",
+        "harga": 240000,
+        "diskon": 20,
+        "thumbnail": "https://down-id.img.susercontent.com/file/6fdc20da041396d4edeced44d0d0795c",
+        "stok": 10000,
+        "tipe": "sepatu",
+        "status": "active",
+        // detail
+        "colors": [
+            "green",
+            "black",
+            "blue",
+            "orange"
+        ],
+        "size": [
+            "small",
+            "medium",
+            "large"
+        ],
+        "sku": "DIS-001",
+        "material": "Nylon",
+        "fit": "extra fit",
+        "gender": "man",
+        "model": "sneaker",
+        "feature": [
+            "Ringan",
+            "Cocok untuk olahraga",
+            "Ukuran ber variasi",
+            "Bisa custom dan request"
+        ],
+        "image_detail": [
+            "https://cf.shopee.co.id/file/6fe06991e71fe2f51ca77eb729b92e11",
+            "https://assets.pikiran-rakyat.com/crop/0x0:0x0/1200x675/photo/2024/07/21/2534067244.png",
+            "https://www.rukita.co/stories/wp-content/uploads/2020/02/jenis-sepatu-olahraga.jpg",
+            "https://down-id.img.susercontent.com/file/sg-11134201-23020-ohstey78idnvd2",
+            "https://down-id.img.susercontent.com/file/829cad7052c85373585435cb50e3644b"
+        ]
+    },
+    {
+        "judul": "Baju 1",
+        "harga": 5620000,
+        "diskon": 2,
+        "thumbnail": "https://fitinline.com/data/article/20230310/Model-Tunik-Terbaru-004.jpg",
+        "stok": 10000,
+        "tipe": "baju",
+        "status": "active",
+        // detail
+        "colors": [
+            "green",
+            "black",
+            "blue",
+            "orange",
+            "slate",
+            "indigo"
+        ],
+        "size": [
+            "small",
+            "medium",
+            "large",
+            "extra large"
+        ],
+        "sku": "BIS-001",
+        "material": "Katun",
+        "fit": "extra fit",
+        "gender": "woman",
+        "model": "tunik",
+        "feature": [
+            "Hangat",
+            "Cocok untuk Liburan atau acara",
+            "Ukuran ber variasi",
+            "Warna tidak terlalu mencolok",
+            "Bisa custom dan request"
+        ],
+        "image_detail": [
+            "https://hassa.co.id/wp-content/uploads/2021/08/model_baju_tunik_batik_terbaru_riri.raisya.gallery_2.jpg",
+            "https://bergaya.id/wp-content/uploads/2020/03/Model-Baju-Tunik-kotak2.jpg",
+            "https://bergaya.id/wp-content/uploads/2019/12/Tunik-Batik-Modern.jpg",
+            "https://bergaya.id/wp-content/uploads/2020/03/Model-Baju-Tunik-sarimbit.jpg",
+            "https://hassa.co.id/wp-content/uploads/2021/08/model_baju_tunik_batik_3_johanna.batik_.jpg",
+            "https://bergaya.id/wp-content/uploads/2020/01/Gamis-pesta-model-tunik.jpg"
+        ]
+    }
+]
+###
+// search product
+POST {{baseAPI}}product/search?search=celana&page=1&limit=10
+Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
+
+###
+// create all size
+POST {{baseAPI}}size
+Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
+
+[
+    {
+        "name": "extra small"
+    },
+    {
+        "name": "small"
+    },
+    {
+        "name": "medium"
+    },
+    {
+        "name": "large"
+    },
+    {
+        "name": "extra large"
+    }
+]
+
+###
+// get all size
+GET  {{baseAPI}}size
+Content-Type: {{contentType}}
+Authorization: Bearer {{token}}
