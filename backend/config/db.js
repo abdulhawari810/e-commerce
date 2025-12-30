@@ -10,12 +10,7 @@ const db = new Sequelize(
   {
     host: process.env.APP_HOST,
     dialect: "mysql",
-<<<<<<< HEAD
-    logging: false,
-  }
-=======
   },
->>>>>>> 2b2e8e3 (two commit)
 );
 
 export default db;
